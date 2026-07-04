@@ -11,8 +11,10 @@ TensorFlow documentation.
 
 ## Running the notebooks
 
-This repo is self-contained: it has its own virtualenv in `.venv/` (gitignored)
-and a dedicated Jupyter kernel named **Python (ml-basics-keras)**.
+To save disk space, this repo shares a single virtualenv/kernel with the
+sibling [`tensorflow-tutorials`](https://github.com/arthi-ramachandran/tensorflow-tutorials)
+repo. The kernel is named **Python (tf-tutorials)** and its venv lives at
+`../tensorflow-tutorials/.venv`.
 
 ### Run a notebook end-to-end (headless)
 
@@ -20,24 +22,28 @@ and a dedicated Jupyter kernel named **Python (ml-basics-keras)**.
 ./run.sh 01_basic_classification.ipynb
 ```
 
-This activates `.venv`, sets the SSL cert bundle, and executes the notebook
-in place with the `ml-basics-keras` kernel.
+`run.sh` activates the shared venv, sets the SSL cert bundle, and executes the
+notebook in place with the `tf-tutorials` kernel. Override the venv location
+with `SHARED_VENV=/path/to/venv ./run.sh ...` if needed.
 
 ### Run interactively
 
 ```bash
-source .venv/bin/activate
-jupyter lab   # open the notebook, pick the "Python (ml-basics-keras)" kernel
+source ../tensorflow-tutorials/.venv/bin/activate
+jupyter lab   # open the notebook, pick the "Python (tf-tutorials)" kernel
 ```
 
 ### Setting it up from scratch (e.g. after a fresh clone)
+
+If you don't have the shared venv/kernel, create one:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install tensorflow matplotlib ipykernel
-python -m ipykernel install --user --name ml-basics-keras --display-name "Python (ml-basics-keras)"
+python -m ipykernel install --user --name tf-tutorials --display-name "Python (tf-tutorials)"
+# then run with: SHARED_VENV=.venv ./run.sh 01_basic_classification.ipynb
 ```
 
 ### macOS note
