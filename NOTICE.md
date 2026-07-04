@@ -17,4 +17,4 @@ retained in the first cells of the notebook.
 
 - Added an SSL-certificate fix cell so the Fashion MNIST dataset downloads on
   macOS (python.org framework Python lacks root certs).
-- Set the notebook kernel to `Python (tf-tutorials)`.
+- Set the notebook kernel to `Python (ml-basics-keras)`.

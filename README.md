@@ -11,22 +11,33 @@ TensorFlow documentation.
 
 ## Running the notebooks
 
-These notebooks are set to use a Jupyter kernel named **Python (tf-tutorials)**
-backed by a virtualenv with TensorFlow.
+This repo is self-contained: it has its own virtualenv in `.venv/` (gitignored)
+and a dedicated Jupyter kernel named **Python (ml-basics-keras)**.
 
-### If you already have the `tf-tutorials` kernel
+### Run a notebook end-to-end (headless)
 
-Open a notebook and pick the **Python (tf-tutorials)** kernel — done.
+```bash
+./run.sh 01_basic_classification.ipynb
+```
 
-### Setting it up from scratch
+This activates `.venv`, sets the SSL cert bundle, and executes the notebook
+in place with the `ml-basics-keras` kernel.
+
+### Run interactively
+
+```bash
+source .venv/bin/activate
+jupyter lab   # open the notebook, pick the "Python (ml-basics-keras)" kernel
+```
+
+### Setting it up from scratch (e.g. after a fresh clone)
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install tensorflow matplotlib ipykernel
-python -m ipykernel install --user --name tf-tutorials --display-name "Python (tf-tutorials)"
-jupyter lab   # then open the notebook and select the kernel
+python -m ipykernel install --user --name ml-basics-keras --display-name "Python (ml-basics-keras)"
 ```
 
 ### macOS note
