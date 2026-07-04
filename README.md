@@ -28,10 +28,19 @@ with `SHARED_VENV=/path/to/venv ./run.sh ...` if needed.
 
 ### Run interactively
 
-```bash
-source ../tensorflow-tutorials/.venv/bin/activate
-jupyter lab   # open the notebook, pick the "Python (tf-tutorials)" kernel
-```
+The notebook sets the SSL cert env vars in a cell near the top, so you only
+need to select the right kernel.
+
+- **VS Code:** open the `.ipynb`, then pick the **Python (tf-tutorials)** kernel
+  in the top-right kernel picker. No venv activation needed.
+- **JupyterLab:** the shared venv doesn't include JupyterLab; install it first,
+  then launch and select the **Python (tf-tutorials)** kernel:
+
+  ```bash
+  source ../tensorflow-tutorials/.venv/bin/activate
+  pip install jupyterlab
+  jupyter lab
+  ```
 
 ### Setting it up from scratch (e.g. after a fresh clone)
 
@@ -41,7 +50,7 @@ If you don't have the shared venv/kernel, create one:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install tensorflow matplotlib ipykernel
+pip install tensorflow matplotlib ipykernel   # add jupyterlab for interactive use
 python -m ipykernel install --user --name tf-tutorials --display-name "Python (tf-tutorials)"
 # then run with: SHARED_VENV=.venv ./run.sh 01_basic_classification.ipynb
 ```
