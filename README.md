@@ -1,7 +1,7 @@
 # ML Basics using Keras
 
-Working through the **"ML basics with Keras"** tutorials from the official
-TensorFlow documentation.
+Machine Learning Basics Using Keras is a beginner-friendly tutorial that explains neural networks, Dense layers, activation functions, logits, loss functions, optimizers, and model training using TensorFlow/Keras with hands-on examples.
+
 
 ## Notebooks
 
