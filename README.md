@@ -8,6 +8,7 @@ Machine Learning Basics Using Keras is a beginner-friendly tutorial that explain
 | File | Tutorial | Dataset | Notes |
 |------|----------|---------|-------|
 | `01_basic_classification.ipynb` | [Basic classification](https://www.tensorflow.org/tutorials/keras/classification) | Fashion MNIST | Dense network, ~88% test accuracy |
+| `02_basic_regression.ipynb` | [Basic regression](https://www.tensorflow.org/tutorials/keras/regression) | Auto MPG | Predict fuel efficiency; DNN reaches ~1.7 MPG MAE |
 
 ## Running the notebooks
 

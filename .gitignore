@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Saved models produced by notebooks (e.g. 02_basic_regression.ipynb)
+*.keras
