@@ -5,9 +5,9 @@ This repository is a beginner-friendly introduction to Machine Learning using Te
 Whether you're new to AI or looking to understand how neural networks work, this tutorial walks through the building blocks step by step.
 
 ## What is Machine Learning?
-Machine learning (ML) is a way of teaching computers how to learn patterns from data instead of writing explicit rules. For example, instead of writing rules to identify handwritten digits, we show the computer thounsands of examples. The model learns from patterns and can predict a new digit which the model has never seen before.
+Machine learning (ML) is a way of teaching computers how to learn patterns from data instead of writing explicit rules. For example, instead of writing rules to identify handwritten digits, we show the computer thousands of examples. The model learns from patterns and can predict a new digit which the model has never seen before.
 
-Just like humans learn from experinece, machine learning models learn from examples.
+Just like humans learn from experience, machine learning models learn from examples.
 
 ## What is TensorFlow?
 TensorFlow is an open source machine learning framework developed by Google. 
@@ -29,10 +29,35 @@ TensorFlow = the engine of a car
 Keras = the steering wheel and dashboard that make the car easy to drive
 
 ## What is a neural network?
+A neural network is the "brain" of a machine learning model. It's loosely inspired by how neurons connect in the human brain.
+
+It's made of layers of small units called **neurons**. Each neuron takes some numbers as input, multiplies them by weights it has learned, adds them up, and passes the result on to the next layer. By stacking many of these layers, the network can learn to recognize complex patterns — like the shape of a handwritten digit or the features of a piece of clothing.
+
+The network starts out knowing nothing (random weights). During **training**, it looks at examples, checks how wrong its guesses are, and slowly adjusts its weights to get better — a bit like tuning thousands of tiny dials until the answers come out right.
 
 ## What is a sequential model?
+A **Sequential model** is the simplest way to build a neural network in Keras. It's just a stack of layers, one after another, where data flows straight through from the first layer to the last.
+
+```python
+model = tf.keras.Sequential([
+    layer_1,
+    layer_2,
+    layer_3,
+])
+```
+
+Think of it like an assembly line: the input goes in one end, each layer does its bit of work in order, and the prediction comes out the other end. It's perfect for beginners because you don't have to wire the layers together yourself — you just list them in order.
 
 ## What is a dense layer?
+A **dense layer** (also called a fully-connected layer) is the most common building block of a neural network. "Dense" means every neuron in the layer is connected to *every* value from the previous layer — nothing is left out.
+
+```python
+tf.keras.layers.Dense(128, activation='relu')
+```
+
+Here, `128` is the number of neurons in the layer, and `activation='relu'` is a simple function that lets the network learn non-straight-line (non-linear) patterns. Stack a few dense layers together and the network can learn surprisingly rich relationships in the data.
+
+In short: **neurons** make up a **dense layer**, dense layers stack into a **Sequential model**, and that model is a **neural network** you train with TensorFlow.
 
 
 ## Notebooks
