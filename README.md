@@ -1,6 +1,38 @@
 # ML Basics using Keras
 
-Machine Learning Basics Using Keras is a beginner-friendly tutorial that explains neural networks, Dense layers, activation functions, logits, loss functions, optimizers, and model training using TensorFlow/Keras with hands-on examples.
+This repository is a beginner-friendly introduction to Machine Learning using TensorFlow and Keras. It explains the core concepts behind neural networks in simple language and provides hands-on examples that you can run and experiment with.
+
+Whether you're new to AI or looking to understand how neural networks work, this tutorial walks through the building blocks step by step.
+
+## What is Machine Learning?
+Machine learning (ML) is a way of teaching computers how to learn patterns from data instead of writing explicit rules. For example, instead of writing rules to identify handwritten digits, we show the computer thounsands of examples. The model learns from patterns and can predict a new digit which the model has never seen before.
+
+Just like humans learn from experinece, machine learning models learn from examples.
+
+## What is TensorFlow?
+TensorFlow is an open source machine learning framework developed by Google. 
+It provides tools needed to:
+- Build machine learning models
+- Train models with data
+- Evaluate their performance
+- Make predictions on new data
+Think of TensorFlow as an engine that performs all mathematical calculations behind machine learning.
+
+## What is Keras?
+Keras is a high-level API that runs on top of TensorFlow.
+
+Instead of writing hundreds of lines of complex code, Keras lets you build neural networks using just a few lines.
+
+Think of it like this:
+
+TensorFlow = the engine of a car
+Keras = the steering wheel and dashboard that make the car easy to drive
+
+## What is a neural network?
+
+## What is a sequential model?
+
+## What is a dense layer?
 
 
 ## Notebooks
