@@ -119,6 +119,7 @@ For example:
 |     0 |   0.50 |
 |     2 |   0.88 |
 |     5 |   0.99 |
+
 The output can be interpreted as a probability.
 Suppose you're predicting whether an email is spam. The model produces a value 2.2. After applying sigmoid, model produces 0.90. This means, 90% probability that email is spam. 
 Common use cases - Binary classification(Yes/No, Spam/Not Spam, Fraud/Not Fraud).
@@ -135,12 +136,14 @@ The model first produces logits:
 | Cat   |   5.2 |
 | Dog   |   2.0 |
 | Bird  |   0.5 |
+
 After applying softmax, model produces -
 | Class | Probability |
 | ----- | ----------: |
 | Cat   |         93% |
 | Dog   |          6% |
 | Bird  |          1% |
+
 The model predicts Cat because it has the highest probability.
 Common use: Multi-class classification (e.g., classifying handwritten digits 0–9, identifying animals, predicting the next word in a language model).
 
@@ -172,12 +175,14 @@ The model first assigns logits like this -
 | Paris  |  12.5 |
 | London |   6.2 |
 | Berlin |   5.8 |
+
 These are just confidence scores. After softmax, they become:
 | Word   | Probability |
 | ------ | ----------: |
 | Paris  |         99% |
 | London |        0.7% |
 | Berlin |        0.3% |
+
 The model then chooses "Paris".
 
 
