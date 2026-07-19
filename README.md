@@ -102,6 +102,7 @@ Examples:
 |     0 |      0 |
 |     3 |      3 |
 |     8 |      8 |
+
 Imagine a neuron detecting whether an image contains an edge.
 If no edge is found (negative value), ReLU outputs 0.
 If an edge is found (positive value), it passes the value forward.
