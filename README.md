@@ -60,6 +60,136 @@ Here, `128` is the number of neurons in the layer, and `activation='relu'` is a 
 In short: **neurons** make up a **dense layer**, dense layers stack into a **Sequential model**, and that model is a **neural network** you train with TensorFlow.
 
 
+## Weights and Biases
+Weights and biases are the two types of parameters that a neural network learns during training. Weights determine how important each input feature is. A larger weight means that input has a stronger influence on the prediction. Biases are extra values added to the weighted sum that help the neuron shift its output. They allow the model to make accurate predictions even when all input values are zero.
+Simple example
+
+Suppose you're predicting house prices using two features:
+- House size
+- Number of bedrooms
+
+A neuron might compute:
+Prediction=(Weight1*Size) + (Weight2*Bedrooms) + Bias
+
+For example:
+Weight for size = 200 (size has a strong effect)
+Weight for bedrooms = 10 (smaller effect)
+Bias = 50
+
+Initially, these values are random. During training, the neural network repeatedly adjusts the weights and biases to reduce the loss, so its predictions become more accurate.
+
+## Activation function
+An activation function is a mathematical function applied to a neuron's output that helps a neural network learn complex patterns. Without activation functions, a neural network would behave like a simple linear model, no matter how many layers it had.
+Think of a neuron like this -
+Inputs
+   │
+Weights × Inputs + Bias
+   │
+Activation Function
+   │
+Output
+
+ReLU -
+ReLU is the most commonly used activation function in the hidden layers of neural networks.
+Rule:
+If the input is negative, output 0.
+If the input is positive, output the same value.
+Examples: 
+| Input | Output |
+| ----: | -----: |
+|    -5 |      0 |
+|    -1 |      0 |
+|     0 |      0 |
+|     3 |      3 |
+|     8 |      8 |
+Imagine a neuron detecting whether an image contains an edge.
+If no edge is found (negative value), ReLU outputs 0.
+If an edge is found (positive value), it passes the value forward.
+This makes learning faster and helps deep networks train efficiently.
+Common use: Hidden layers in most deep learning models.
+
+Sigmoid -
+The Sigmoid function converts any number into a value between 0 and 1.
+For example:
+| Input | Output |
+| ----: | -----: |
+|    -5 |   0.01 |
+|    -2 |   0.12 |
+|     0 |   0.50 |
+|     2 |   0.88 |
+|     5 |   0.99 |
+The output can be interpreted as a probability.
+Suppose you're predicting whether an email is spam. The model produces a value 2.2. After applying sigmoid, model produces 0.90. This means, 90% probability that email is spam. 
+Common use cases - Binary classification(Yes/No, Spam/Not Spam, Fraud/Not Fraud).
+
+Softmax -
+Softmax is used when there are more than two possible classes.
+Instead of producing one probability, it converts a list of scores (logits) into probabilities that sum to 100%. Suppose an image could be:
+Cat
+Dog
+Bird
+The model first produces logits:
+| Class | Logit |
+| ----- | ----: |
+| Cat   |   5.2 |
+| Dog   |   2.0 |
+| Bird  |   0.5 |
+After applying softmax, model produces -
+| Class | Probability |
+| ----- | ----------: |
+| Cat   |         93% |
+| Dog   |          6% |
+| Bird  |          1% |
+The model predicts Cat because it has the highest probability.
+Common use: Multi-class classification (e.g., classifying handwritten digits 0–9, identifying animals, predicting the next word in a language model).
+
+| Activation Function | Output Range                         | Common Use                 |
+| ------------------- | ------------------------------------ | -------------------------- |
+| **ReLU**            | 0 to ∞                               | Hidden layers              |
+| **Sigmoid**         | 0 to 1                               | Binary classification      |
+| **Softmax**         | Multiple probabilities that sum to 1 | Multi-class classification |
+
+Example Neural Network
+model = Sequential([
+    Flatten(input_shape=(28,28)),
+    Dense(128, activation='relu'),
+    Dense(10, activation='softmax')
+])
+Here's what each layer does:
+
+- Flatten converts the 28×28 image into a 784-element vector.
+- Dense(128, activation='relu') learns useful features from the image. ReLU helps the network capture complex patterns.
+- Dense(10, activation='softmax') outputs the probabilities for the 10 possible digit classes (0–9).
+
+# Logits
+Logits are the raw confidence scores a neural network produces before converting them into probabilities.
+Suppose the model is completing the sentence:
+"The capital of France is"
+The model first assigns logits like this -
+| Word   | Logit |
+| ------ | ----: |
+| Paris  |  12.5 |
+| London |   6.2 |
+| Berlin |   5.8 |
+These are just confidence scores. After softmax, they become:
+| Word   | Probability |
+| ------ | ----------: |
+| Paris  |         99% |
+| London |        0.7% |
+| Berlin |        0.3% |
+The model then chooses "Paris".
+
+
+# Loss function
+
+
+# Epochs
+
+# Regression
+
+# Classification
+
+
 ## Notebooks
 
 | File | Tutorial | Dataset | Notes |
