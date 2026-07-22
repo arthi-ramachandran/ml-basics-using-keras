@@ -187,13 +187,57 @@ The model then chooses "Paris".
 
 
 # Loss function
+A loss function tells the model how wrong its prediction is.
+The model repeats these steps million times -
+Make a prediction
+       ↓
+Measure how wrong it is (Loss Function)
+       ↓
+Adjust weights and biases
+       ↓
+Make a better prediction
 
 
 # Epochs
+An epoch is one complete pass through the entire training dataset.
+Suppose you have 1,000 training images of cats and dogs.
+
+Epoch 1: The model sees all 1,000 images once.
+Epoch 2: It sees all 1,000 images again and improves.
+Epoch 3: It sees them a third time and improves further.
+
+After each epoch, the model updates its weights and biases based on what it learned.
+The model usually doesn't learn everything after seeing the data only once. By training for multiple epochs, it gradually reduces its errors and improves its predictions. For example: 
+Epoch 1   Accuracy = 70%
+Epoch 2   Accuracy = 82%
+Epoch 3   Accuracy = 91%
+Epoch 4   Accuracy = 95%
 
 # Regression
+Regression is a machine learning technique used to predict a numerical value based on input data.
+Imagine you're a real estate agent trying to estimate the price of a house.
+
+You look at information such as:
+House size
+Number of bedrooms
+Age of the house
+Location
+Based on these features, you estimate the selling price.
+
+That's regression—the model learns from many previous house sales and predicts a number.
 
 # Classification
+Classification is a machine learning technique used to predict which category an input belongs to.
+
+Imagine you're sorting mail into different bins.
+
+Each letter goes into one category:
+📧 Personal
+💼 Business
+📢 Advertisement
+You're classifying each letter into the correct category.
+
+A machine learning model does the same thing—it looks at the input and decides which category it belongs to.
 
 
 ## Notebooks
